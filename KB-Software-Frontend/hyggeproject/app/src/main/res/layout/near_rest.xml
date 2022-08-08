@@ -29,7 +29,7 @@
         android:layout_marginStart="340dp"
         android:text="4년"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/days" />
 
     <Button
         android:id="@+id/select_man"
@@ -40,7 +40,6 @@
         android:background="@drawable/cutom_btn"
         android:minWidth="0dp"
         android:minHeight="0dp"
-        android:onClick="onClick"
         android:padding="10dp"
         android:text="남성"
         app:layout_constraintStart_toEndOf="@+id/select_woman"
@@ -55,7 +54,6 @@
         android:background="@drawable/cutom_btn"
         android:minWidth="0dp"
         android:minHeight="0dp"
-        android:onClick="onClick"
         android:padding="10dp"
         android:text="여성"
         app:layout_constraintStart_toEndOf="@+id/select_with"
@@ -70,7 +68,6 @@
         android:background="@drawable/cutom_btn"
         android:minWidth="0dp"
         android:minHeight="0dp"
-        android:onClick="onClick"
         android:padding="10dp"
         android:text="동행자 동반"
         app:layout_constraintStart_toEndOf="@+id/select_withkid"
@@ -133,7 +130,6 @@
         android:background="@drawable/cutom_btn"
         android:minWidth="10dp"
         android:minHeight="10dp"
-        android:onClick="onClick"
         android:padding="10dp"
         android:text="아이동반"
         app:layout_constraintStart_toStartOf="parent"
@@ -150,13 +146,16 @@
         app:layout_constraintTop_toBottomOf="@+id/select_man" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/days"
         android:layout_width="352dp"
         android:layout_height="38dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="15dp"
         android:progressDrawable="@drawable/seekbar_distance"
         android:thumb="@drawable/seekbar_thumb"
+        android:elevation="20dp"
+        android:max="1460"
+        android:progress="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -167,6 +166,16 @@
         android:layout_marginStart="35dp"
         android:text="1일"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/days" />
+
+    <TextView
+        android:id="@+id/viewDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="45dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
