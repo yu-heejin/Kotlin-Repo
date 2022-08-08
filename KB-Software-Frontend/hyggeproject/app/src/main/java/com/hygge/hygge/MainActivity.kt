@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.hygge.hygge.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,11 +13,21 @@ class MainActivity : AppCompatActivity() {
         var seek = findViewById<SeekBar>(R.id.days)
         var v = findViewById(R.id.viewDays) as TextView
 
+        v.setText("휴식기간을 선택해주세요.")
+
         seek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 // here, you react to the value being set in seekBar
                 //값이 변경되었을 때 구현
-                v.setText(progress.toString())
+                var dayVal = 0
+                var yearVal = 0
+                if (progress >= 365) {
+                    dayVal = progress % 365
+                    yearVal = progress / 365
+                } else {
+                    dayVal = progress
+                }
+                v.setText(yearVal.toString() + "년 " + dayVal.toString() + "일")
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {
